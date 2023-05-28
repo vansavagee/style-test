@@ -6,7 +6,7 @@ export class Questions extends Component {
     return (
       <main>
         {this.props.questions.map(el =>(
-          <Question key ={el.id} question ={el} onAdd ={this.props.onAdd}/>
+          <Question key ={el.id} question ={el} onAdd ={this.props.onAdd} answers={this.props.answers}/>
         ))}
       </main>
     )
