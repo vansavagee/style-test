@@ -1,8 +1,8 @@
 import React,{ Component } from "react";
 
-import Result from './Result';
+import Result from './components/Result';
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
-import Home from "./Home";
+import Home from "./components/Home";
 
 
 export class App extends Component {
@@ -55,7 +55,7 @@ export class App extends Component {
         },
         {
           id:5,
-          task:'Какая картинка из представленных вам откликается? ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.',
+          task:'Какая картинка из представленных вам откликается? (ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.)',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -65,7 +65,7 @@ export class App extends Component {
         },
         {
           id:6,
-          task:'Какая картинка из представленных вам откликается? ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.',
+          task:'Какая картинка из представленных вам откликается? (ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.)',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -141,11 +141,16 @@ export class App extends Component {
       }
         
       addToAnswer(question,answer){
-        this.state.answers[question.id]=answer
-        console.log(Object.keys(this.state.answers).length)
-        if(Object.keys(this.state.answers).length===11){
-          this.setState({Isfinished:true})
-        }
+        
+          this.setState({answers:{...this.state.answers,
+            [question.id]:answer}},()=>{
+              if(Object.keys(this.state.answers).length===11){
+                this.setState({Isfinished:true});
+                
+              }
+            })
+        
+        
       }
     
   

@@ -1,7 +1,7 @@
-import Header from "./components/Header";
-import Questions from "./components/Questions";
+import Header from "./Header";
+import Questions from "./Questions";
 import React, { Component } from 'react'
-
+import {Link} from "react-router-dom";
 export class Home extends Component {
    
     
@@ -12,9 +12,7 @@ export class Home extends Component {
           <Header />
           <Questions questions ={this.props.questions} onAdd={this.props.onAdd} answers={this.props.answers}/>
           {this.props.Isfinished?
-          <form action="/result">
-          <button className="knopka">ПОЛУЧИТЬ РЕЗУЛЬТАТ </button>
-          </form>:<h2>ДЛЯ ПОЛУЧЕНИЯ РЕЗУЛЬТАТА НУЖНО ОТВЕТИТЬ НА ВСЕ ВОПРОСЫ!</h2>}
+           <Link className="knopka" to='/result'>ПОЛУЧИТЬ РЕЗУЛЬТАТ </Link>:<h2>ДЛЯ ПОЛУЧЕНИЯ РЕЗУЛЬТАТА НУЖНО ОТВЕТИТЬ НА ВСЕ ВОПРОСЫ!</h2>}
           
         </div>
       )
