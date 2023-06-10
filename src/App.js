@@ -141,7 +141,9 @@ export class App extends Component {
       }
         
       addToAnswer(question,answer){
-        
+        const { v4: uuidv4 } = require('uuid');
+
+          console.log(uuidv4());
           this.setState({answers:{...this.state.answers,
             [question.id]:answer}},()=>{
               if(Object.keys(this.state.answers).length===11){

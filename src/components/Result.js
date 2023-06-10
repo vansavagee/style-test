@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {FaTheaterMasks, FaHeart, FaSuitcase, FaPalette, FaGlassCheers} from 'react-icons/fa'
 export class Result extends Component {
    constructor(props){
     super(props);
@@ -23,25 +24,36 @@ export class Result extends Component {
   render() {
     return (
       <div className='result'>
- <svg viewBox="0 0 300 300" className='stat'>
-  <rect x="10" y={100-(this.state.final[1]*10)} width="20" height={this.state.final[1]*10} fill="#f00"></rect>
-  <rect x="35" y={100-(this.state.final[2]*10)} width="20" height={this.state.final[2]*10}  fill="#0f0"></rect>
-  <rect x="60" y={100-(this.state.final[3]*10)} width="20" height={this.state.final[3]*10}  fill="#00f"></rect>
-  <rect x="85" y={100-(this.state.final[4]*10)} width="20" height={this.state.final[4]*10} fill="#f80"></rect>
-  <rect x="110" y={100-(this.state.final[5]*10)} width="20" height={this.state.final[5]*10}  fill="#ccc"></rect>
-  <text x="20" y="108" font-size="10" text-anchor="middle">1</text>
-  <text x="45" y="108" font-size="10" text-anchor="middle">2</text>
-  <text x="70" y="108"  font-size="10" text-anchor="middle">3</text>
-  <text x="95" y="108"  font-size="10" text-anchor="middle">4</text>
-  <text x="120" y="108" font-size="10" text-anchor="middle">5</text>
-   </svg>
-   <span className='textToStat'>Текст справа от объекта</span>
-      </div>
+        <p className='resultname'>А вот и результат!</p>
+        <div className='statfull'>
+          <svg className='stat'>
+            <rect x="50" y={500-(this.state.final[1]*50)} width="150" height={this.state.final[1]*50} fill="#ECE0C8"></rect>
+            <rect x="250" y={500-(this.state.final[2]*50)} width="150" height={this.state.final[2]*50}  fill="#F5DEB3"></rect>
+            <rect x="450" y={500-(this.state.final[3]*50)} width="150" height={this.state.final[3]*50}  fill="#fFE4C4"></rect>
+            <rect x="650" y={500-(this.state.final[4]*50)} width="150" height={this.state.final[4]*50} fill="#D2B48C "></rect>
+            <rect x="850" y={500-(this.state.final[5]*50)} width="150" height={this.state.final[5]*50}  fill="#f0EAD6 "></rect>
+           <FaTheaterMasks x="90" y="520" font-size="70" text-anchor="middle"/> 
+           <FaHeart x="290" y="520" font-size="70" text-anchor="middle"/> 
+           <FaSuitcase x="495" y="520" font-size="70" text-anchor="middle"/> 
+           <FaPalette x="695" y="520" font-size="70" text-anchor="middle"/> 
+           <FaGlassCheers x="895" y="520" font-size="70" text-anchor="middle"/> 
+          </svg>
+          <div className='list'>
+          <p><FaTheaterMasks /> - Драматичный<br/>cтиль<br />
+         <FaHeart/> - Романтический <br/>стиль<br />
+          <FaSuitcase /> - Классический <br/>стиль<br/>
+          <FaPalette /> - Инфантильный <br/>стиль<br/>
+          <FaGlassCheers /> - Отвязный <br/>стиль</p>
+        </div>
 
+        </div>
+       
+        
+
+      </div>
     )
   }
 
-  
-}
 
+}
 export default Result
