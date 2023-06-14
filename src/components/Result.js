@@ -4,11 +4,11 @@ export class Result extends Component {
    constructor(props){
     super(props);
     this.state={
-    final:{ 1:0,
-          2:0,
-          3:0,
-          4:0,
-          5:0 }
+    final:{ 1:4,
+          2:5,
+          3:2,
+          4:1,
+          5:2 }
     }
         for(var s in this.props.answers){
           if (this.props.answers[s]===1)this.state.final[1]+=1;

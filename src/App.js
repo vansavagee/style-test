@@ -3,6 +3,18 @@ import React,{ Component } from "react";
 import Result from './components/Result';
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import {createAssistant, createSmartappDebugger,} from "@salutejs/client";
+
+const initializeAssistant = (getState/*: any*/) => {
+  if (process.env.NODE_ENV === "development") {
+    return createSmartappDebugger({
+      token: process.env.REACT_APP_TOKEN ?? "",
+      initPhrase: `Запусти ${process.env.REACT_APP_SMARTAPP}`,
+      getState,
+    });
+  }
+  return createAssistant({getState});
+};
 
 
 export class App extends Component {
@@ -55,7 +67,7 @@ export class App extends Component {
         },
         {
           id:5,
-          task:'Какая картинка из представленных вам откликается? (ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.)',
+          task:'Какая картинка из представленных вам откликается?',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -65,7 +77,7 @@ export class App extends Component {
         },
         {
           id:6,
-          task:'Какая картинка из представленных вам откликается? (ВАЖНО! Не анализировать, а поймать общее настроение. Представьте, что вы выбираете обои на телефон.)',
+          task:'Какая картинка из представленных вам откликается? ',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -85,7 +97,7 @@ export class App extends Component {
         },
         {
           id:8,
-          task:'Представьте, вы идете по улице в хорошую погоду. У вас нет дел, и можно поглядеть на прохожих.Кто из прохожих лучше всего одет? Чей образ вас зацепил?',
+          task:'Чей образ вас зацепил?',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -105,7 +117,7 @@ export class App extends Component {
         },
         {
           id:10,
-          task:'Попробуйте поймать настроение следующих картинок. Какое из настроений Вам больше по нраву?',
+          task:'Какая из картинок вам больше по нраву?',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -115,7 +127,7 @@ export class App extends Component {
         },
         {
           id:11,
-          task:'Попробуйте поймать настроение следующих картинок. Какое из настроений Вам больше по нраву?',
+          task:'Какая из картинок вам больше по нраву?',
           img1:'1.jpg',
           img2:'2.jpg',
           img3:'3.jpg',
@@ -125,6 +137,7 @@ export class App extends Component {
         },
       ]
     }
+    this.assistant = initializeAssistant(() => {});
     this.addToAnswer = this.addToAnswer.bind(this)
   }
       render(){
