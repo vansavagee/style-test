@@ -4,7 +4,16 @@ import Result from './components/Result';
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import {createAssistant, createSmartappDebugger,} from "@salutejs/client";
+import { text, background, gradient } from '@salutejs/plasma-tokens';
+import { createGlobalStyle } from 'styled-components';
+const DocStyles = createGlobalStyle`
+  html {
+    color: ${text};
+    background-color: ${background};
+    background-image: ${gradient};
 
+  }
+`;
 const initializeAssistant = (getState/*: any*/) => {
   if (process.env.NODE_ENV === "development") {
     return createSmartappDebugger({
@@ -192,6 +201,7 @@ export class App extends Component {
           <Route exact path='/'   element={<Home questions ={this.state.questions} buttonRef={this.buttonRef} onAdd={this.addToAnswer} answers={this.state.answers} Isfinished={this.state.Isfinished}/>} />
           <Route path='/result' element={<Result answers= {this.state.answers}/>} />
       </Routes>
+      <DocStyles />
       </Router>
   
         )
