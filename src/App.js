@@ -1,4 +1,4 @@
-import React,{ Component } from "react";
+import React,{ Component} from "react";
 
 import Result from './components/Result';
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
@@ -138,8 +138,8 @@ export class App extends Component {
       ]
     }
     this.assistant = initializeAssistant(() => this.getStateForAssistant());
+    this.buttonRef = React.createRef();
     this.assistant.on("data", (event/*: any*/) => {
-      console.log(`assistant.on(data)`, event);
       
         const {action} = event;
         this.dispatchAssistantAction(action);
@@ -149,22 +149,20 @@ export class App extends Component {
     this.addToAnswer = this.addToAnswer.bind(this)
   }
   getStateForAssistant() {
-    console.log('getStateForAssistant: this.state:', this.state)
     const state = {
       item_selector: {
         items: this.state.answers
       },
     };
-    console.log('getStateForAssistant: state:', state)
     return state;
   }
   dispatchAssistantAction(action) {
-    console.log('dispatchAssistantAction', action);
     if (action) {
       switch (action.type) {
         case 'add_ans_quest':
           return this.add_ans_quest(action);
-
+        case 'go_to_results':
+          return this.go_to_results(action)
 
         default:
           throw new Error();
@@ -172,7 +170,6 @@ export class App extends Component {
     }
   }
   add_ans_quest(action) {
-    console.log('add_ans_quest', action);
     this.setState({answers:{...this.state.answers,
       [action.question]:action.answer}},()=>{
         if(Object.keys(this.state.answers).length===11){
@@ -183,12 +180,16 @@ export class App extends Component {
    
     )
   }
+  go_to_results(action){
+    this.buttonRef.current.click();
+  }
+
       render(){
         return(
       
           <Router>
         <Routes>
-          <Route exact path='/'  element={<Home questions ={this.state.questions} onAdd={this.addToAnswer} answers={this.state.answers} Isfinished={this.state.Isfinished}/>} />
+          <Route exact path='/'   element={<Home questions ={this.state.questions} buttonRef={this.buttonRef} onAdd={this.addToAnswer} answers={this.state.answers} Isfinished={this.state.Isfinished}/>} />
           <Route path='/result' element={<Result answers= {this.state.answers}/>} />
       </Routes>
       </Router>

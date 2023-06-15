@@ -17,7 +17,6 @@ body{
 .wrapper{
     width: 1280px;
     margin: 50px auto;
-    zoom: 0.5;
 }
 
 header .logo{
@@ -125,7 +124,7 @@ main {
   }
 .result{
   font-size: 60px;
-  zoom: 0.3;
+  zoom:0.9;
   margin-left: 100px;
 }
 .statfull{
@@ -157,4 +156,13 @@ main {
 }
 .fivepictures{
   position: relative;
+}
+@media  screen and (max-width: 1000px) {
+  body{
+    zoom: 0.9;
+    margin-left: 50px;
+  }
+  .result{
+    zoom:0.3;
+  }
 }
