@@ -137,8 +137,51 @@ export class App extends Component {
         },
       ]
     }
-    this.assistant = initializeAssistant(() => {});
+    this.assistant = initializeAssistant(() => this.getStateForAssistant());
+    this.assistant.on("data", (event/*: any*/) => {
+      console.log(`assistant.on(data)`, event);
+      
+        const {action} = event;
+        this.dispatchAssistantAction(action);
+      
+    });
+ 
     this.addToAnswer = this.addToAnswer.bind(this)
+  }
+  getStateForAssistant() {
+    console.log('getStateForAssistant: this.state:', this.state)
+    const state = {
+      item_selector: {
+        items: this.state.answers
+      },
+    };
+    console.log('getStateForAssistant: state:', state)
+    return state;
+  }
+  dispatchAssistantAction(action) {
+    console.log('dispatchAssistantAction', action);
+    if (action) {
+      switch (action.type) {
+        case 'add_ans_quest':
+          return this.add_ans_quest(action);
+
+
+        default:
+          throw new Error();
+      }
+    }
+  }
+  add_ans_quest(action) {
+    console.log('add_ans_quest', action);
+    this.setState({answers:{...this.state.answers,
+      [action.question]:action.answer}},()=>{
+        if(Object.keys(this.state.answers).length===11){
+          this.setState({Isfinished:true});
+          
+        }
+      }
+   
+    )
   }
       render(){
         return(

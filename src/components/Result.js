@@ -30,7 +30,7 @@ export class Result extends Component {
             <rect x="50" y={500-(this.state.final[1]*50)} width="150" height={this.state.final[1]*50} fill="#ECE0C8"></rect>
             <rect x="250" y={500-(this.state.final[2]*50)} width="150" height={this.state.final[2]*50}  fill="#F5DEB3"></rect>
             <rect x="450" y={500-(this.state.final[3]*50)} width="150" height={this.state.final[3]*50}  fill="#fFE4C4"></rect>
-            <rect x="650" y={500-(this.state.final[4]*50)} width="150" height={this.state.final[4]*50} fill="#D2B48C "></rect>
+            <rect x="650" y={500-(this.state.final[4]*50)} width="150" height={this.state.final[4]*50} fill="#F5DEC3 "></rect>
             <rect x="850" y={500-(this.state.final[5]*50)} width="150" height={this.state.final[5]*50}  fill="#f0EAD6 "></rect>
            <FaTheaterMasks x="90" y="520" font-size="70" text-anchor="middle"/> 
            <FaHeart x="290" y="520" font-size="70" text-anchor="middle"/> 
