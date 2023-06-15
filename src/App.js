@@ -181,7 +181,7 @@ export class App extends Component {
     )
   }
   go_to_results(action){
-    this.buttonRef.current.click();
+    this.state.Isfinished&&this.buttonRef.current.click();
   }
 
       render(){
