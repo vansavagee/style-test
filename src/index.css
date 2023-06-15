@@ -156,11 +156,20 @@ main {
 .fivepictures{
   position: relative;
 }
-@media  screen and (max-width: 1000px) {
+@media  screen and (max-width: 1000px)and (min-width:500px) {
   body{
     zoom: 0.3;
   }
  
+}
+@media  screen and (max-device-width: 500px) {
+  body{
+    zoom: 0.3;
+  }
+  .statfull{
+    display: block;
+  
+  }
 }
 @media  screen and (min-width: 1000px) and (max-height: 1300px){
   body{
@@ -171,7 +180,7 @@ main {
   }
 }
 
-@media  screen and (min-height: 1700px) {
+@media  screen and (min-height: 1500px) {
   body{
     zoom: 0.8;
     margin-left: 50px;
