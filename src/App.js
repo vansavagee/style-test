@@ -11,7 +11,7 @@ const DocStyles = createGlobalStyle`
     color: ${text};
     background-color: ${background};
     background-image: ${gradient};
-
+    min-height: 100vh;
   }
 `;
 const initializeAssistant = (getState/*: any*/) => {
