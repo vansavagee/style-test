@@ -12,6 +12,7 @@ const DocStyles = createGlobalStyle`
     background-color: ${background};
     background-image: ${gradient};
     min-height: 100vh;
+    Outline: none;
   }
 `;
 const initializeAssistant = (getState/*: any*/) => {
@@ -171,7 +172,9 @@ export class App extends Component {
         case 'add_ans_quest':
           return this.add_ans_quest(action);
         case 'go_to_results':
-          return this.go_to_results(action)
+          return this.go_to_results(action);
+        case 'reload_test':
+          return this.reload_test(action);
 
         default:
           throw new Error();
@@ -188,6 +191,14 @@ export class App extends Component {
       }
    
     )
+  }
+  reload_test(action){
+    const currentPage = window.location.href;
+    this.setState({answers:{}});
+
+    if(currentPage.substring(currentPage.length-6) === "result"){
+      window.history.back();
+    }
   }
   go_to_results(action){
     this.state.Isfinished&&this.buttonRef.current.click();
@@ -208,9 +219,7 @@ export class App extends Component {
       }
         
       addToAnswer(question,answer){
-        const { v4: uuidv4 } = require('uuid');
-
-          console.log(uuidv4());
+        
           this.setState({answers:{...this.state.answers,
             [question.id]:answer}},()=>{
               if(Object.keys(this.state.answers).length===11){

@@ -24,7 +24,7 @@ export class Result extends Component {
   render() {
     return (
       <div className='result'>
-        <p className='resultname'>А вот и результат!</p>
+        <p className='resultname'>Результат теста</p>
         <div className='statfull'>
           <svg className='stat'>
             <rect x="50" y={500-(this.state.final[1]*50)} width="150" height={this.state.final[1]*50} fill="#ECE0C8"></rect>
@@ -32,11 +32,11 @@ export class Result extends Component {
             <rect x="450" y={500-(this.state.final[3]*50)} width="150" height={this.state.final[3]*50}  fill="#fFE4C4"></rect>
             <rect x="650" y={500-(this.state.final[4]*50)} width="150" height={this.state.final[4]*50} fill="#F5DEC3 "></rect>
             <rect x="850" y={500-(this.state.final[5]*50)} width="150" height={this.state.final[5]*50}  fill="#f0EAD6 "></rect>
-           <FaTheaterMasks x="90" y="520" font-size="70" text-anchor="middle"/> 
-           <FaHeart x="290" y="520" font-size="70" text-anchor="middle"/> 
-           <FaSuitcase x="495" y="520" font-size="70" text-anchor="middle"/> 
-           <FaPalette x="695" y="520" font-size="70" text-anchor="middle"/> 
-           <FaGlassCheers x="895" y="520" font-size="70" text-anchor="middle"/> 
+           <FaTheaterMasks x="90" y="520" fontSize="70" text-anchor="middle"/> 
+           <FaHeart x="290" y="520" fontSize="70" text-anchor="middle"/> 
+           <FaSuitcase x="495" y="520" fontSize="70" text-anchor="middle"/> 
+           <FaPalette x="695" y="520" fontSize="70" text-anchor="middle"/> 
+           <FaGlassCheers x="895" y="520" fontSize="70" text-anchor="middle"/> 
           </svg>
           <div className='list'>
           <p><FaTheaterMasks /> - Драматичный<br/>cтиль<br />

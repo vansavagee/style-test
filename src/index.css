@@ -5,7 +5,6 @@
 }
 
 body{
-
     font-family: 'Montserrat', sans-serif;
  
 }
@@ -41,7 +40,7 @@ main {
 }
 
 .imgforquestion{
-    border: 1px solid #463b27;
+    border: 1px solid #000000;
     height: 250px;
     margin-bottom: 150px;
     margin-top: 50px;
@@ -52,15 +51,15 @@ main {
 
 }
 .imgforquestion.active{
-    transform: scale(1.08);
-    border: 4px solid #000000;
+    transform: scale(1.06);
+    border: 5px solid #ffffff;
     margin-bottom: 140px;
     margin-top: 30px;
     margin-right: 10px;
 }
 .imgforquestion:hover {
-    transform: scale(1.08);
-    border: 4px solid #000000;
+    transform: scale(1.06);
+    border: 5px solid #ffffff;
     margin-bottom: 140px;
     margin-top: 30px;
     margin-right: 10px;
@@ -71,9 +70,10 @@ main {
 }
 
 .knopka {
+  zoom: 1.5;
     width: 200px;
     height: 0px;
-    margin-left: 400px;
+    margin-left: 200px;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
@@ -123,12 +123,16 @@ main {
   }
 .result{
   font-size: 60px;
-  margin-left: 100px;
+  
 }
 .statfull{
-  display: flex;
+  margin-top: 300px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .stat{
   width: 1000px;
   height: 650px;
@@ -136,14 +140,19 @@ main {
   
 }
 .list{
-  margin-top: 50px;
   margin-left: 150px;
 }
 .resultname{
-  font-weight: 600;
-  font-size: 80px;
-  margin-left: 50px;
+  font-size: 70px;
+
+  font-weight: 300;
   margin-top: 50px;
+  margin-bottom: 50px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 }
 .numberofpicture{
   position: absolute;
@@ -163,7 +172,8 @@ main {
 }
 @media  screen and (max-device-width: 500px) {
   body{
-    zoom: 0.3;
+    zoom: 0.25;
+    
   }
   .statfull{
     display: block;
@@ -177,12 +187,10 @@ main {
   body{
     zoom: 0.6;
   }
-  .result{
-    zoom:1.5;
-  }
+
 }
 
-@media  screen and (min-height: 1500px) {
+@media  screen and (min-height: 1400px) {
   body{
     zoom: 0.8;
     margin-left: 50px;
