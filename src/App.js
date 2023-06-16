@@ -194,8 +194,8 @@ export class App extends Component {
   }
   reload_test(action){
     const currentPage = window.location.href;
-    this.setState({answers:{}});
-
+    this.setState({answers:{}})
+    this.setState({Isfinished:false})
     if(currentPage.substring(currentPage.length-6) === "result"){
       window.history.back();
     }
