@@ -158,6 +158,10 @@ export class App extends Component {
  
     this.addToAnswer = this.addToAnswer.bind(this)
   }
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   getStateForAssistant() {
     const state = {
       item_selector: {
@@ -199,6 +203,10 @@ export class App extends Component {
     if(currentPage.substring(currentPage.length-6) === "result"){
       window.history.back();
     }
+    setTimeout(() => {
+      this.scrollToTop();
+    }, 10);
+
   }
   go_to_results(action){
     this.state.Isfinished&&this.buttonRef.current.click();
