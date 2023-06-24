@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import {FaTheaterMasks, FaHeart, FaSuitcase, FaPalette, FaGlassCheers} from 'react-icons/fa'
 export class Result extends Component {
    constructor(props){
+    
     super(props);
+
     this.state={
     final:{ 1:0,
           2:0,
@@ -20,7 +22,10 @@ export class Result extends Component {
         }
     
    }
-
+   componentDidMount = ()=>{
+    this.props.addSugg('resultpage','bye-bye');
+    
+      }
   render() {
     return (
       <div className='result'>

@@ -165,7 +165,7 @@ export class App extends Component {
   getStateForAssistant() {
     const state = {
       item_selector: {
-        items: this.state.answers
+        items: "this.state.answers"
       },
     };
     return state;
@@ -210,15 +210,33 @@ export class App extends Component {
   }
   go_to_results(action){
     this.state.Isfinished&&this.buttonRef.current.click();
+    
   }
-
+  send_action_value(action_id, value) {
+    console.log("send_action_value begins");
+    const data = {
+      action: {
+        action_id: action_id,
+        parameters: {   // значение поля parameters может любым, но должно соответствовать серверной логике
+          value: value, // см.файл src/sc/noteDone.sc смартаппа в Studio Code
+        }
+      }
+    };  
+    const unsubscribe = this.assistant.sendData(
+      data,
+      (data) => {   // функция, вызываемая, если на sendData() был отправлен ответ
+        const {type, payload} = data;
+        console.log('sendData onData:', type, payload);
+        unsubscribe();
+      });
+  }
       render(){
         return(
       
           <Router>
         <Routes>
           <Route exact path='/'   element={<Home questions ={this.state.questions} buttonRef={this.buttonRef} onAdd={this.addToAnswer} answers={this.state.answers} Isfinished={this.state.Isfinished}/>} />
-          <Route path='/result' element={<Result answers= {this.state.answers}/>} />
+          <Route path='/result' element={<Result answers= {this.state.answers} addSugg = {() => {this.send_action_value('resultpage','bye-bye')}}/>} />
       </Routes>
       <DocStyles />
       </Router>
@@ -227,6 +245,7 @@ export class App extends Component {
       }
         
       addToAnswer(question,answer){
+    
         
           this.setState({answers:{...this.state.answers,
             [question.id]:answer}},()=>{

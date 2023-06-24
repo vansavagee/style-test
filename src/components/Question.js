@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 export class Question extends Component {
 
   render() {
-    console.log('this.props.answers:', this.props.answers)
 
     return (
       <div className='task' >
