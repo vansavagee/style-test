@@ -1,4 +1,3 @@
-import Header from "./Header";
 import Questions from "./Questions";
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
@@ -9,10 +8,10 @@ export class Home extends Component {
         return (
           
         <div className="wrapper">
-          <Header />
+          
           <Questions questions ={this.props.questions} onAdd={this.props.onAdd} answers={this.props.answers}/>
           {this.props.Isfinished?
-           <Link className="knopka" to='/result' ref={this.props.buttonRef}  >ПОЛУЧИТЬ РЕЗУЛЬТАТ </Link>:<h2>ДЛЯ ПОЛУЧЕНИЯ РЕЗУЛЬТАТА НУЖНО ОТВЕТИТЬ НА ВСЕ ВОПРОСЫ!</h2>}
+           <Link className="knopka" to='/result' ref={this.props.buttonRef}  >ПОЛУЧИТЬ РЕЗУЛЬТАТ </Link>:<h2 className="almostknopka">ДЛЯ ПОЛУЧЕНИЯ РЕЗУЛЬТАТА НУЖНО ОТВЕТИТЬ НА ВСЕ ВОПРОСЫ!</h2>}
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
       )

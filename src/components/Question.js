@@ -6,8 +6,8 @@ export class Question extends Component {
 
     return (
       <div className='task' >
-        <h3>{this.props.question.id}. {this.props.question.task}</h3>
-
+        <h3 className='taskwords'>{this.props.question.id}. {this.props.question.task}</h3>
+        <div className='pics3'>
         <img 
           className={this.props.answers[this.props.question.id]===1?'imgforquestion active':'imgforquestion'}
           src={"./img/"+this.props.question.id+"/"+this.props.question.img1}
@@ -24,6 +24,8 @@ export class Question extends Component {
         src={"./img/"+this.props.question.id+"/"+this.props.question.img3} 
         onClick = {()=> {
           this.props.onAdd(this.props.question,3)}}/>
+          </div>
+          <div className='pics2'>
         <img className={this.props.answers[this.props.question.id]===4?'imgforquestion active':'imgforquestion'}
         src={"./img/"+this.props.question.id+"/"+this.props.question.img4} 
         onClick = {()=> {
@@ -32,6 +34,7 @@ export class Question extends Component {
         src={"./img/"+this.props.question.id+"/"+this.props.question.img5} 
         onClick = {()=> {
           this.props.onAdd(this.props.question,5)}}/>
+        </div>
         </div>
 
     )

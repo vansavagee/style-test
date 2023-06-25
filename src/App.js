@@ -236,7 +236,7 @@ export class App extends Component {
           <Router>
         <Routes>
           <Route exact path='/'   element={<Home questions ={this.state.questions} buttonRef={this.buttonRef} onAdd={this.addToAnswer} answers={this.state.answers} Isfinished={this.state.Isfinished}/>} />
-          <Route path='/result' element={<Result answers= {this.state.answers} addSugg = {() => {this.send_action_value('resultpage','bye-bye')}}/>} />
+          <Route path='/result' element={<Result answers= {this.state.answers} addSugg =  {(one,two)=>{this.send_action_value(one,two)}}/>} />
       </Routes>
       <DocStyles />
       </Router>

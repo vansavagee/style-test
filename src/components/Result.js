@@ -20,16 +20,21 @@ export class Result extends Component {
           if (this.props.answers[s]===5)this.state.final[5]+=1;
           
         }
-    
+        this.componentDidMount = this.componentDidMount.bind(this)
    }
-   componentDidMount = ()=>{
-    this.props.addSugg('resultpage','bye-bye');
+   
+   componentDidMount=()=>{
+    setTimeout(() => {
+      this.props.addSugg('resultpage','bye-bye');
+    }, 50);
+   
     
       }
+    
   render() {
     return (
-      <div className='result'>
-        <p className='resultname'>Результат теста</p>
+      <div className='result' >
+        <p className='resultname'   >Результат теста</p>
         <div className='statfull'>
           <svg className='stat'>
             <rect x="50" y={500-(this.state.final[1]*50)} width="150" height={this.state.final[1]*50} fill="#ECE0C8"></rect>
@@ -44,7 +49,7 @@ export class Result extends Component {
            <FaGlassCheers x="895" y="520" fontSize="70" text-anchor="middle"/> 
           </svg>
           <div className='list'>
-          <p><FaTheaterMasks /> - Драматичный<br/>cтиль<br />
+          <p ><FaTheaterMasks /> - Драматичный<br/>cтиль<br />
          <FaHeart/> - Романтический <br/>стиль<br />
           <FaSuitcase /> - Классический <br/>стиль<br/>
           <FaPalette /> - Инфантильный <br/>стиль<br/>
