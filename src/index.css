@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 body{
@@ -24,9 +25,12 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.task{
+  margin-bottom: 220px;
+}
 .taskwords{
   margin-bottom: 80px;
-  margin-top: 220px;
+  margin-top: 40px;
   font-size: 50px;
   text-align: center;
 }
@@ -35,42 +39,47 @@ main {
   text-align: center;
 }
 .imgforquestion{
- 
-    border: 1px solid #000000;
+  position: relative;
+    border: 7px solid #ffffff;
     height: 420px;
     width: 310px;
-    margin-top: 60px;
-    margin-right: 60px;
+    margin-top: 70px;
+    margin-right: 70px;
     border-radius: 10px 10px 10px 10px;
-    transition: transform 400ms ease;
+    transition: transform  500ms ease,filter  500ms ease,border 500ms ease;
+    transform-origin: center;
     cursor: pointer;
 }
 .imgforquestion.active{
-  border: 5px solid #ffffff;
-  transform: scale(1.07);
-   
+  border: 7px solid #000000;
+  transform: scale(1.15);
+filter:brightness(40%);
 }
 .imgforquestion:hover {
-  border: 5px solid #ffffff;
-  transform: scale(1.07);
-   
+  border: 7px solid #000000;
+  transform: scale(1.15);
+  filter:brightness(40%);
 }
 .description{
     margin-bottom: 100px;
     font-size: 20px;
 }
 .almostknopka{
+  margin-top: 700px;
+  margin-bottom: 900px;
   text-align: center;
-  margin-top: 200px;
-  font-size: 30px;
+  font-size: 50px;
 }
 .knopka {
+  border: 5px solid #a15c0d;
+  transition: border 500ms ease;
   text-align: center;
-  margin-top: 200px;
-  zoom: 1.5;
+  margin-top: 250px;
+  margin-bottom: 330px;
+  zoom: 2.3;
+  margin-left:110px;
     width: 200px;
     height: 0px;
-    margin-left: 200px;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
@@ -85,29 +94,14 @@ main {
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
     background: rgb(255,151,0);
-    border: none;
     z-index: 1;
     padding-bottom:50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
   }
-  .knopka:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 0;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 5px;
-    background-color: #eaf818;
-    background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    transition: all 0.3s ease;
-  }
+  
   .knopka:hover {
+    border: 5px solid #000000;
     color: #000;
   }
   .knopka:hover:after {
@@ -149,18 +143,9 @@ main {
   top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
 }
-.numberofpicture{
-  position: absolute;
-  font-weight: 600;
-  top:15%;
-  left: 7%;
-  color: #ffffff;
-}
-.fivepictures{
-  position: relative;
-}
+
+
 @media  screen and (max-width: 1000px)and (min-width:500px) {
   body{
     zoom: 0.3;
@@ -187,7 +172,7 @@ main {
  
 }
 
-@media  screen and (min-height: 1400px) {
+@media  screen and (min-height: 1300px) {
   body{
     zoom: 0.8;
     margin-left: 50px;

@@ -157,7 +157,19 @@ export class App extends Component {
     });
  
     this.addToAnswer = this.addToAnswer.bind(this)
+    window.addEventListener('keydown', (event) => {
+      switch(event.code) {
+        case 'ArrowDown':
+          window.scrollTo(0, window.scrollY + 830);
+        break;
+       case 'ArrowUp':
+        window.scrollTo(0, window.scrollY - 830);
+        break;
+      }
+    });
+   
   }
+  
   scrollToTop() {
     window.scrollTo(0, 0);
   }

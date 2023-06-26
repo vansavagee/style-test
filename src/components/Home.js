@@ -12,7 +12,7 @@ export class Home extends Component {
           <Questions questions ={this.props.questions} onAdd={this.props.onAdd} answers={this.props.answers}/>
           {this.props.Isfinished?
            <Link className="knopka" to='/result' ref={this.props.buttonRef}  >ПОЛУЧИТЬ РЕЗУЛЬТАТ </Link>:<h2 className="almostknopka">ДЛЯ ПОЛУЧЕНИЯ РЕЗУЛЬТАТА НУЖНО ОТВЕТИТЬ НА ВСЕ ВОПРОСЫ!</h2>}
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          
         </div>
       )
       }
