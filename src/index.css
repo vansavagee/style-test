@@ -180,6 +180,8 @@ filter:brightness(40%);
  
   .statfull{
     display: block;
-  
+  }
+  .list{
+    margin-top: 300px;
   }
 }
