@@ -156,7 +156,7 @@ filter:brightness(40%);
   cursor: pointer;
 }
 .tooltip{
-  font-size: 40px;
+  font-size: 55px;
   margin-top: 70px;
 }
 @media  screen and (max-width: 1000px)and (min-width:500px) {
@@ -196,7 +196,7 @@ filter:brightness(40%);
     zoom: 0.6;
   }
  .statfull{
-  zoom: 1.1;
+  zoom: 0.9;
  }
 }
 @media  screen and (min-height: 1300px) {
