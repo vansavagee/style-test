@@ -42,18 +42,19 @@ export class Result extends Component {
             <rect x="450" y={500-(this.state.final[3]*50)} width="150" height={this.state.final[3]*50}  fill="#fFE4C4"></rect>
             <rect x="650" y={500-(this.state.final[4]*50)} width="150" height={this.state.final[4]*50} fill="#F5DEC3 "></rect>
             <rect x="850" y={500-(this.state.final[5]*50)} width="150" height={this.state.final[5]*50}  fill="#f0EAD6 "></rect>
-           <FaTheaterMasks x="90" y="520" fontSize="70" text-anchor="middle"/> 
-           <FaHeart x="290" y="520" fontSize="70" text-anchor="middle"/> 
-           <FaSuitcase x="495" y="520" fontSize="70" text-anchor="middle"/> 
-           <FaPalette x="695" y="520" fontSize="70" text-anchor="middle"/> 
-           <FaGlassCheers x="895" y="520" fontSize="70" text-anchor="middle"/> 
+            <FaTheaterMasks x="90" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('dramStyle','bye-bye')}}/> 
+           <FaHeart x="290" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('romStyle','bye-bye')}}/> 
+           <FaSuitcase x="495" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('ClassStyle','bye-bye')}}/> 
+           <FaPalette x="695" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('InfStyle','bye-bye')}}/> 
+           <FaGlassCheers x="895" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('OtvyazStyle','bye-bye')}}/> 
+           
           </svg>
           <div className='list'>
-          <p ><FaTheaterMasks /> - Драматичный<br/>cтиль<br />
-         <FaHeart/> - Романтический <br/>стиль<br />
-          <FaSuitcase /> - Классический <br/>стиль<br/>
-          <FaPalette /> - Инфантильный <br/>стиль<br/>
-          <FaGlassCheers /> - Отвязный <br/>стиль</p>
+          <p ><FaTheaterMasks className= "icons" onClick={()=>{this.props.addSugg('dramStyle','bye-bye')}}/> - Драматичный<br/>cтиль<br />
+         <FaHeart className= "icons" onClick={()=>{this.props.addSugg('romStyle','bye-bye')}}/> - Романтический <br/>стиль<br />
+          <FaSuitcase className= "icons" onClick={()=>{this.props.addSugg('ClassStyle','bye-bye')}}/> - Классический <br/>стиль<br/>
+          <FaPalette className= "icons" onClick={()=>{this.props.addSugg('InfStyle','bye-bye')}}/> - Инфантильный <br/>стиль<br/>
+          <FaGlassCheers className= "icons" onClick={()=>{this.props.addSugg('OtvyazStyle','bye-bye')}}/> - Отвязный <br/>стиль</p>
         </div>
 
         </div>
