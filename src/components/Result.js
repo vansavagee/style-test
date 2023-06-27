@@ -49,12 +49,15 @@ export class Result extends Component {
            <FaGlassCheers x="895" y="520" fontSize="70" className= "icons" text-anchor="middle" onClick={()=>{this.props.addSugg('OtvyazStyle','bye-bye')}}/> 
            
           </svg>
+       
+
           <div className='list'>
           <p ><FaTheaterMasks className= "icons" onClick={()=>{this.props.addSugg('dramStyle','bye-bye')}}/> - Драматичный<br/>cтиль<br />
          <FaHeart className= "icons" onClick={()=>{this.props.addSugg('romStyle','bye-bye')}}/> - Романтический <br/>стиль<br />
           <FaSuitcase className= "icons" onClick={()=>{this.props.addSugg('ClassStyle','bye-bye')}}/> - Классический <br/>стиль<br/>
           <FaPalette className= "icons" onClick={()=>{this.props.addSugg('InfStyle','bye-bye')}}/> - Инфантильный <br/>стиль<br/>
           <FaGlassCheers className= "icons" onClick={()=>{this.props.addSugg('OtvyazStyle','bye-bye')}}/> - Отвязный <br/>стиль</p>
+          <p  className='tooltip'>(На значки стилей можно нажать)</p>
         </div>
 
         </div>
